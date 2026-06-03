@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>收纳闪闪屋</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <section class="topbar" aria-label="游戏状态">
+        <div class="brand">
+          <span class="brand-mark">▣</span>
+          <div>
+            <h1>收纳闪闪屋</h1>
+            <p id="levelName">第 1 关</p>
+          </div>
+        </div>
+        <div class="status">
+          <div class="meter">
+            <span>用时</span>
+            <strong id="timerText">00:00</strong>
+          </div>
+          <div class="meter">
+            <span>错误</span>
+            <strong id="mistakeText">0</strong>
+          </div>
+          <div class="meter">
+            <span>提示</span>
+            <strong id="hintCount">3</strong>
+          </div>
+          <div class="meter">
+            <span>方案</span>
+            <strong id="schemeText">0/0</strong>
+          </div>
+          <button id="hintButton" class="icon-button" type="button" aria-label="提示" title="提示">
+            <span>?</span>
+          </button>
+          <button id="restartButton" class="icon-button" type="button" aria-label="重玩本关" title="重玩本关">
+            <span>↻</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="stage-wrap">
+        <aside class="level-list" aria-label="关卡">
+          <div class="level-track" id="levelTrack"></div>
+        </aside>
+
+        <section id="stage" class="stage" aria-label="收纳区域">
+          <div id="sceneLayer" class="scene-layer"></div>
+          <div id="slotsLayer" class="slots-layer"></div>
+          <div id="itemsLayer" class="items-layer"></div>
+          <div id="toast" class="toast" role="status" aria-live="polite"></div>
+        </section>
+      </section>
+
+      <section class="bottom-panel">
+        <div>
+          <strong id="progressText">0 / 0</strong>
+          <span>已归位</span>
+        </div>
+        <div id="schemeRuleText" class="scheme-rule"></div>
+        <div class="rules">
+          <span>拖动物品到收纳格</span>
+          <span>尝试不同排序方案</span>
+          <span>可以反复试错</span>
+        </div>
+      </section>
+    </main>
+
+    <div id="modal" class="modal" hidden>
+      <div class="modal-panel">
+        <h2 id="modalTitle"></h2>
+        <div id="resultStars" class="result-stars" aria-label="本关星级"></div>
+        <p id="modalText"></p>
+        <div class="modal-actions">
+          <button id="modalPrimary" class="primary-button" type="button">继续</button>
+          <button id="modalSecondary" class="secondary-button" type="button">重玩</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="./game.js"></script>
+  </body>
+</html>
